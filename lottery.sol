@@ -4,17 +4,36 @@ pragma solidity >=0.4.22 <0.7.0;
 /**
  * @title Lottery
  * @dev Wager ether with 4 other participants
+ * @author Michael Bentley (mlb222)
  * @author Evan Hruskar (ezh221)
  * @author Nicole ElChaar (nje222)
  * @author Dan Yu (ddy221)
- * @author Michael Bentley (mlb222)
+ * 
+ * The contract is deployed on the Kovan test network. 
+ * A three player version is deployed at:
+ * 0xcBF19E687241a96B70fd5E6Ca8a85C1399cC0A0b
+ * A five player version is deployed at:
+ * 0x276672ffDc991DcF62B15A181B75C7b23dB06a6a
+ * 
+ * We tested the three player version over the Kovan network.
+ * 
+ * ABI:
+    [
+        {
+            "inputs": [],
+            "name": "wager",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        }
+    ]
  */
 contract Lottery {
 
-    uint players = 3; //TODO: Change to 5!
+    uint players = 5; //TODO: Change to 5!
 
     // Need to make sure this is the same as players. 
-    address payable[3] participants;
+    address payable[5] participants;
 
     uint total_amount = 0;
 
